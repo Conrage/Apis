@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    background: url('./img/background.svg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+section.filters {
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    gap: 1rem;
+    max-width: 942px;
+    width: 90%;
+}
+
+section.filters input {
+    background: none;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-bottom: 3px solid #626ed9;
+    padding: 0.3rem;
+}
+
+section.filters button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #484848;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0.4rem 2rem;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+section.filters button:hover {
+    border-color: #626ed9;
+    background-color: #626ed9;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.14);
+    transform: scale(1.02);
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+section.image {
+    width: 90%;
+    height: 50%;
+    max-width: 942px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+}
+
+section.image .window-header {
+    width: 100%;
+    height: 2rem;
+    border-radius: 18px 18px 0px 0px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+section.image .window-header h6 {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.1em;
+    font-weight: 200;
+    font-size: 0.6rem;
+}
+
+section.image .window-header b {
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.1em;
+    font-weight: 200;
+    font-size: 0.6rem;
+}
+
+section.image .window-header h6 span {
+    opacity: 0.4;
+}
+
+section.image .window-header .tab-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.image .window-main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0px 0px 18px 18px;
+}
+
+section.image .picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
