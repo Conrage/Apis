@@ -31,6 +31,7 @@ async function searchImage() {
     const image = document.querySelector('.picture');
     const input = document.querySelector('input');
     const title = document.querySelector('b');
+    const download = document.querySelector('a');
     const data = await getPictureOfTheDay(input.value);
 
     if (data.code === 400) {
@@ -40,4 +41,21 @@ async function searchImage() {
 
     title.innerText = data.title;
     image.src = data.url;
+}
+
+function toDataURL(url) {
+    return fetch(url).then((response) => {
+        return response.blob();
+    }).then(blob => {
+        return URL.createObjectURL(blob);
+    });
+}
+
+async function downloadFile(src) {
+    const a = document.createElement("a");
+    a.href = await toDataURL(src);
+    a.download = "myImage.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 }
